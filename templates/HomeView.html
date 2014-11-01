@@ -1,0 +1,16 @@
+DISCLAIMER: For test and personal use only. No data is stored on server. Only scrapping is done for personal use.
+<form method="post">
+{{ form.name.label }}<br>
+{{ form.name }}<br>
+{{ form.song_id.label }}<br>
+{{ form.song_id }}<br>
+{{ form.song_list.label }}<br>
+{{ form.song_list }}<br>
+<input type="submit" value="Get Link" />    {% csrf_token %}
+</form>
+<br>
+<ol>
+{% for song in songs %}
+    <li><a href="{{ song.download_url }}">{{ song.name }}</a></li>
+{% endfor %}
+</ol>
